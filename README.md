@@ -1,0 +1,1 @@
+# Lumina-Eksamen-1.-sem
