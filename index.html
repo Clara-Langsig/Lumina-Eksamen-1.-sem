@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lumina Audio</title>
+
+   <!-- Google Fonts: Font "Koulen" and font "Comfortaa" -->
+  <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;500&family=Koulen&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css.css" />
+</head>
+
+<body>
+  <header class="hero">
+    <!-- TOP NAVIGATION -->
+    <nav class="nav">
+      <!-- Burger menu button for opening the slide-in navigation panel -->
+      <button class="burger" id="burgerBtn" type="button" onclick="openMenu()">
+        <img src="images/burger.png" alt="Menu ikon">
+      </button>
+
+      <!-- Centered logo text in the navigation bar -->
+      <article class="nav-logo">LUMINA AUDIO</article>
+
+      <!-- Right side icons: search, profile and cart -->
+      <article class="nav-icons">
+        <button class="icon-btn" id="searchBtn" type="button">
+          <img src="images/search.png" alt="Søg">
+        </button>
+        <button class="icon-btn" type="button">
+          <img src="images/profil.png" alt="Profil">
+        </button>
+        <button class="icon-btn" type="button">
+          <img src="images/buy.png" alt="Kurv">
+        </button>
+      </article>
+    </nav>
+
+    <!-- SEARCH OVERLAY -->
+    <!-- This overlay covers the hero area when active and shows a search field -->
+    <div class="search-bar" id="searchBar">
+      <div class="search-field">
+        <img src="images/searchBlack.png" class="search-icon" alt="Søg ikon">
+        <input type="text" placeholder="Søg...">
+      </div>
+    </div>
+
+    <!-- SLIDE-IN LEFT NAVIGATION PANEL -->
+    <aside class="nav-panel" id="navPanel">
+      <div class="nav-panel-header">
+        <button class="close-btn" type="button" onclick="closeMenu()">
+          ✕ Luk
+        </button>
+      </div>
+
+      <!-- Links inside the slide-in panel -->
+      <!-- Some links scroll to sections via id attributes, others are placeholders -->
+      <nav class="nav-panel-links">
+        <a href="#products">Højtalere</a>
+        <a href="#">Hovedtelefoner</a>
+        <a href="#lumina">Lumina One</a>
+        <a href="#">Soundbars</a>
+        <a href="#">Tilbehør</a>
+        <hr>
+        <a href="#footer">Kontakt os</a>
+        <a href="#">Om Lumina Group</a>
+        <a href="#footer">Returneringer</a>
+      </nav>
+    </aside>
+
+    <!-- HERO TEXT BLOK -->
+    <section class="hero-content">
+      <div class="hero-text">
+        <h1>LUMINA ONE</h1>
+        <p class="hero-subtitle">
+          Skandinavisk lyd.<br>
+          Ren enkelhed.
+        </p>
+        <!-- CALL TO ACTION BUTTON -->
+        <button class="btn-primary" type="button" id="ctaBtn">KØB NU</button>
+      </div>
+    </section>
+
+    <!-- TRUSTPILOT IN THE BOTTOM RIGHT OF THE HERO -->
+    <section class="hero-trustpilot">
+      <img src="images/stars.png" alt="stjerner">
+      <span class="rating-text">4,8/5 ★ 4.392 anmeldelser</span>
+    </section>
+  </header>
+
+  <!-- MAIN CONTENT WRAPS ALL SECTIONS BELOW THE HERO -->
+  <main>
+    <!-- LUMINA ONE / PRODUCT CARDS -->
+    <section class="lumina-section" id="products">
+      <h2 class="lumina-heading">LUMINA ONE</h2>
+
+      <!-- Visible window for the sliding product cards -->
+      <div class="cards-viewport">
+        <!-- Track that is moved left/right by JavaScript to create the slider effect -->
+        <div class="cards-track">
+          <!-- CARD 1 -->
+          <article class="product-card">
+            <!-- Like button with image icon (toggled via JS) -->
+            <button class="like-btn" type="button" aria-label="Like produkt">
+              <img src="images/unlike.png" alt="Like ikon" class="heart-icon">
+            </button>
+            <img src="images/white.png" alt="Lumina One Moonlight White" class="product-image">
+            <h3 class="product-name">LUMINA ONE</h3>
+            <p class="product-variant">Moonlight White</p>
+            <p class="product-price">1995,-</p>
+            <button class="buy-btn" type="button">KØB</button>
+          </article>
+
+          <!-- CARD 2 -->
+          <article class="product-card">
+            <button class="like-btn" type="button" aria-label="Like produkt">
+              <img src="images/unlike.png" alt="Like ikon" class="heart-icon">
+            </button>
+            <img src="images/rose.png" alt="Lumina One Dusty Rose" class="product-image">
+            <h3 class="product-name">LUMINA ONE</h3>
+            <p class="product-variant">Dusty Rose</p>
+            <p class="product-price">1995,-</p>
+            <button class="buy-btn" type="button">KØB</button>
+          </article>
+
+          <!-- CARD 3 -->
+          <article class="product-card">
+            <button class="like-btn" type="button" aria-label="Like produkt">
+              <img src="images/unlike.png" alt="Like ikon" class="heart-icon">
+            </button>
+            <img src="images/green.png" alt="Lumina One Sage Green" class="product-image">
+            <h3 class="product-name">LUMINA ONE</h3>
+            <p class="product-variant">Sage Green</p>
+            <p class="product-price">1995,-</p>
+            <button class="buy-btn" type="button">KØB</button>
+          </article>
+
+          <!-- CARD 4 (hidden at first, revealed when scrolling) -->
+          <article class="product-card">
+           <button class="like-btn" type="button" aria-label="Like produkt">
+              <img src="images/unlike.png" alt="Like ikon" class="heart-icon">
+            </button>
+            <img src="images/purple.png" alt="Lumina One Extra Color" class="product-image">
+            <h3 class="product-name">LUMINA ONE</h3>
+            <p class="product-variant">Limited Edition</p>
+            <p class="product-price">1995,-</p>
+            <button class="buy-btn" type="button">KØB</button>
+          </article>
+        </div>
+      </div>
+
+      <!-- SLIDER / SCROLLBAR -->
+      <div class="cards-slider">
+        <input
+         type="range"
+          min="0"
+          max="100"
+          value="0"
+          id="cardSlider"
+          aria-label="Scroll mellem højtalere"
+        />
+      </div>
+    </section>
+
+
+    <!-- ABOUT SECTION: PRODUCT STORY + THREE FEATURE ICONS -->
+    <section class="about-section" id="lumina">
+      <div class="about-top">
+        <!-- LEFT: LARGE PRODUCT PHOTO -->
+        <figure class="about-image">
+          <img src="images/omLuminOne.png" alt="Lumina One på bord" />
+        </figure>
+
+        <!-- RIGHT: TEXT PANEL WITH PRODUCT DESCRIPTION -->
+        <article class="about-panel">
+          <h2 class="about-heading">LUMINA ONE</h2>
+         <p class="about-text">
+            En bærbar Bluetooth-højtaler, der kombinerer skandinavisk elegance,
+            bærbarhed og kraftfuld lyd. Med 18 timers spilletid, USB-C
+            opladning og et design skabt til at blive delt, er LUMINA ONE
+            perfekt til både hverdagsbrug og sociale øjeblikke.
+          </p>
+        </article>
+      </div>
+
+      <!-- LOWER ROW WITH THREE FEATURE ICONS AND TEXT -->
+      <div class="about-features">
+        <!-- FEATURE 1: Bluetooth -->
+        <article class="feature">
+         <img
+            src="images/bluetooth.png"
+            alt="Bluetooth ikon"
+            class="feature-icon"
+          />
+          <h3 class="feature-title">Bluetooth</h3>
+          <p class="feature-text">
+            Bluetooth 5.3, AUX-indgang og mulighed for at parre op til 3 andre
+            LUMINA One enheder.
+          </p>
+        </article>
+
+        <!-- FEATURE 2: Connect -->
+        <article class="feature">
+          <img
+            src="images/connect.png"
+            alt="Connect ikon"
+            class="feature-icon"
+          />
+          <h3 class="feature-title">Connect</h3>
+          <p class="feature-text">
+            Funktion der gør det nemt at “blende” din playliste med andres via
+            app’en – perfekt til fællesfester.
+          </p>
+        </article>
+
+        <!-- FEATURE 3: Volume -->
+        <article class="feature">
+          <img
+            src="images/volume.png"
+            alt="Volume ikon"
+            class="feature-icon"
+          />
+          <h3 class="feature-title">Volume</h3>
+          <p class="feature-text">
+            Op til 100 dB – nok til en strandfest eller park-picnic uden at
+            være “for meget”.
+          </p>
+        </article>
+      </div>
+    </section>
+  
+
+    <!-- SOCIAL CAROUSEL: LUMINA + DIG -->
+    <section class="social-section">
+      <div class="social-header">
+        <h2 class="social-heading">LUMINA + DIG</h2>
+
+        <!-- Primary button linking to social media (no click behavior) -->
+        <button class="social-cta" type="button">
+          Find os på social
+        </button>
+      </div>
+
+      <!-- Wrapper controls horizontal scrolling; inner element is the flex track -->
+      <div class="social-carousel-wrapper">
+        <div class="social-carousel" id="socialCarousel">
+          <!-- 10 cards in total -->
+
+          <!-- Social-Picture 1 -->
+          <article class="social-card">
+            <img src="images/someYoga.png" alt="Lumina i brug 1">
+          </article>
+
+          <!-- Social-Picture 2 -->
+          <article class="social-card">
+            <img src="images/someBord.png" alt="Lumina i brug 2">
+          </article>
+
+          <!-- Social-Picture 3 -->
+          <article class="social-card">
+            <img src="images/someStil.png" alt="Lumina i brug 3">
+          </article>
+
+          <!-- Social-Picture 4 -->
+          <article class="social-card">
+            <img src="images/someMad.png" alt="Lumina i brug 4">
+          </article>
+
+          <!-- Social-Picture 5 -->
+          <article class="social-card">
+            <img src="images/someSpeaker.png" alt="Lumina i brug 5">
+          </article>
+
+          <!-- Social-Picture 6 -->
+          <article class="social-card">
+            <img src="images/someGronstil.png" alt="Lumina i brug 6">
+          </article>
+
+          <!-- Social-Picture 7 -->
+          <article class="social-card">
+            <img src="images/someReol.png" alt="Lumina i brug 7">
+          </article>
+
+          <!-- Social-Picture 8 -->
+          <article class="social-card">
+            <img src="images/somePicnic.png" alt="Lumina i brug 8">
+          </article>
+
+          <!-- Social-Picture 9 -->
+          <article class="social-card">
+            <img src="images/somePigeaften.png" alt="Lumina i brug 9">
+          </article>
+
+          <!-- Social-Picture 10 -->
+          <article class="social-card">
+            <img src="images/someStrand.png" alt="Lumina i brug 10">
+          </article>
+        </div>
+      </div>
+
+      <!-- Bottom line and navigation arrows for the carousel -->
+      <div class="social-footer">
+        <div class="social-line"></div>
+        <div class="social-controls">
+          <button
+            class="social-arrow-btn"
+            id="socialPrev"
+            type="button"
+            aria-label="Forrige billede">
+            &#8249; <!-- left arrow -->
+          </button>
+          <button
+           class="social-arrow-btn"
+            id="socialNext"
+            type="button"
+            aria-label="Næste billede">
+            &#8250; <!-- right arrow -->
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- TAG LYDEN MED DIG SECTION: LARGE BACKGROUND IMAGE WITH TEXT OVERLAY -->
+    <section class="carry-section-bg">
+      <div class="carry-content">
+
+        <!-- Text on top of the background image -->
+        <article class="carry-text-overlay">
+          <h2 class="carry-heading">TAG LYDEN MED DIG</h2>
+
+          <p>
+            Med sin bærbare størrelse og ikoniske silhuet fungerer højtaleren
+            næsten som et moderne accessories.
+          </p>
+
+          <p>
+            Tag den med dig, og lad musikken følge dig – hvor end dagen fører dig.
+          </p>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- 360° MUSIKOPLEVELSE SECTION -->
+    <section class="music360-section">
+      <div class="music360-inner">
+        <!-- LEFT: IMAGE -->
+        <figure class="music360-image">
+          <img
+            src="images/360.png"
+            alt="Lumina højtalere på hylde med 360 graders lyd"/>
+        </figure>
+
+        <!-- RIGHT: TEXT -->
+        <article class="music360-text">
+          <h2 class="music360-heading">360° MUSIKOPLEVELSE</h2>
+          <p>
+            Skab ægte surroundstemning: Connect tre højtalere og oplev, hvordan
+            lyden folder sig ud omkring dig. Med et fuldt Lumina One-setup får
+            du dyb bas, klare detaljer og en lyd, der omslutter dig fra alle
+            retninger.
+          </p>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-inner" id="footer">
+
+      <!-- COLUMN 1 – Logo and newsletter sign-up -->
+      <div class="footer-column">
+        <h3 class="footer-logo">LUMINA</h3>
+        <h4 class="footer-subheading">Tilmeld Dig</h4>
+
+        <div class="footer-email-wrapper">
+          <img src="images/email.png" alt="Mail ikon" class="footer-mail-icon">
+          <span class="footer-email-text">E-mail</span>
+        </div>
+
+        <div class="footer-email-line"></div>
+
+        <button class="footer-signup-btn">Tilmeld</button>
+      </div>
+
+      <!-- COLUMN 2 – Customer service links -->
+      <div class="footer-column">
+        <h4 class="footer-subheading">Kundeservice</h4>
+        <a href="#">Kontakt Os</a>
+        <a href="#">Levering & Forsendelse</a>
+        <a href="#">Returneringer</a>
+        <a href="#">Terms & Condition</a>
+        <a href="#">Privacy Policy</a>
+      </div>
+
+      <!-- COLUMN 3 – Company links -->
+      <div class="footer-column">
+        <h4 class="footer-subheading">Virksomheden</h4>
+        <a href="#">Om Lumina Group</a>
+        <a href="#">Presse</a>
+        <a href="#">Jobmuligheder</a>
+        <a href="#">Kontakt Os</a>
+      </div>
+
+      <!-- COLUMN 4 – Social media icons -->
+      <div class="footer-column">
+        <h4 class="footer-subheading">Social</h4>
+
+        <div class="footer-social-item">
+          <img src="images/instagram.png" alt="Instagram">
+          <span>Instagram</span>
+        </div>
+
+        <div class="footer-social-item">
+          <img src="images/youtube.png" alt="YouTube">
+          <span>Youtube</span>
+        </div>
+
+        <div class="footer-social-item">
+          <img src="images/tiktok.png" alt="TikTok">
+          <span>TikTok</span>
+        </div>
+
+        <div class="footer-social-item">
+          <img src="images/facebook.png" alt="Facebook">
+          <span>Facebook</span>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Bottom line and legal links -->
+    <div class="footer-bottom-line"></div>
+
+    <div class="footer-bottom">
+      <span>2025 © LUMINA</span>
+
+      <div class="footer-bottom-links">
+        <a href="#">FAQ</a>
+        <a href="#">Privacy</a>
+        <a href="#">Terms & Condition</a>
+      </div>
+    </div>
+  </footer>
+
+
+  <script src="js.js"></script>
+</body>
+</html>
